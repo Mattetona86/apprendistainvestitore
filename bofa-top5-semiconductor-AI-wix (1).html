@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 5 Titoli AI – Raccomandazioni Bank of America | L'Apprendista Investitore</title>
+<style>
+  /* ── FONT IMPORT via jsDelivr (compatibile con Wix) ── */
+  @import url('https://cdn.jsdelivr.net/npm/@fontsource/bebas-neue@5/index.css');
+  @import url('https://cdn.jsdelivr.net/npm/@fontsource/dm-sans@5/index.css');
+  @import url('https://cdn.jsdelivr.net/npm/@fontsource/space-mono@5/index.css');
+
+  :root {
+    --black: #080808;
+    --white: #f0f0f0;
+    --yellow: #FFD600;
+    --cyan: #00E5FF;
+    --magenta: #FF2D78;
+    --green: #00FF94;
+    --orange: #FF6B35;
+    --purple: #BF5FFF;
+    --card-bg: #111111;
+    --border: #222222;
+
+    /* Font fallback stack — se i font custom non caricano, questi mantengono lo stile */
+    --font-display: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  /* ── HEADER ── */
+  .brand {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--yellow), transparent);
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 8vw, 74px);
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+
+  h1 .accent-y { color: var(--yellow); }
+  h1 .accent-c { color: var(--cyan); }
+
+  .intro {
+    font-size: 18px;
+    color: #aaaaaa;
+    font-weight: 300;
+    border-left: 3px solid var(--yellow);
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.1em;
+    margin-bottom: 56px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--yellow), var(--cyan), transparent);
+    margin: 56px 0;
+  }
+
+  /* ── STOCK CARD ── */
+  .stock-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 36px 36px 30px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stock-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+  }
+  .card-1::before { background: var(--yellow); }
+  .card-2::before { background: var(--cyan); }
+  .card-3::before { background: var(--magenta); }
+  .card-4::before { background: var(--green); }
+  .card-5::before { background: var(--orange); }
+
+  .card-rank {
+    font-family: var(--font-display);
+    font-size: 80px;
+    line-height: 1;
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    opacity: 0.07;
+    letter-spacing: -2px;
+    font-weight: 400;
+  }
+  .card-1 .card-rank { color: var(--yellow); }
+  .card-2 .card-rank { color: var(--cyan); }
+  .card-3 .card-rank { color: var(--magenta); }
+  .card-4 .card-rank { color: var(--green); }
+  .card-5 .card-rank { color: var(--orange); }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .ticker-badge {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .card-1 .ticker-badge { background: var(--yellow); color: #000; }
+  .card-2 .ticker-badge { background: var(--cyan); color: #000; }
+  .card-3 .ticker-badge { background: var(--magenta); color: #fff; }
+  .card-4 .ticker-badge { background: var(--green); color: #000; }
+  .card-5 .ticker-badge { background: var(--orange); color: #000; }
+
+  .card-title-block h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    color: #666;
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ── KPI ROW ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .kpi {
+    background: #161616;
+    padding: 14px 16px;
+    border: 1px solid #1e1e1e;
+  }
+
+  .kpi-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 6px;
+  }
+
+  .kpi-value {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .card-1 .kpi-value { color: var(--yellow); }
+  .card-2 .kpi-value { color: var(--cyan); }
+  .card-3 .kpi-value { color: var(--magenta); }
+  .card-4 .kpi-value { color: var(--green); }
+  .card-5 .kpi-value { color: var(--orange); }
+
+  /* ── BODY TEXT ── */
+  .card-body {
+    font-size: 15.5px;
+    color: #c0c0c0;
+    line-height: 1.8;
+  }
+
+  .card-body p { margin-bottom: 14px; }
+  .card-body p:last-child { margin-bottom: 0; }
+
+  .hl-y { color: var(--yellow); font-weight: 700; }
+  .hl-c { color: var(--cyan); font-weight: 700; }
+  .hl-m { color: var(--magenta); font-weight: 700; }
+  .hl-g { color: var(--green); font-weight: 700; }
+  .hl-o { color: var(--orange); font-weight: 700; }
+  .hl-p { color: var(--purple); font-weight: 700; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  /* ── BOFA BOX ── */
+  .bofa-box {
+    border: 1px solid #2a2a2a;
+    padding: 16px 20px;
+    margin-top: 20px;
+    background: #0d0d0d;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .bofa-box-icon {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--white);
+    background: #1a1a1a;
+    padding: 8px 10px;
+    border: 1px solid #333;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .bofa-box-text {
+    font-size: 13.5px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    background: #0e0e0e;
+    border: 1px solid #1e1e1e;
+    border-top: 3px solid var(--yellow);
+    padding: 40px 36px;
+    margin-top: 16px;
+  }
+
+  .conclusion h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: var(--yellow);
+    margin-bottom: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .conclusion p {
+    font-size: 15.5px;
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  /* ── VALUATION TABLE ── */
+  .val-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    font-size: 13px;
+  }
+  .val-table th {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #555;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+  }
+  .val-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #c0c0c0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .val-table tr:last-child td { border-bottom: none; }
+  .val-table .ticker-col { font-weight: 700; font-size: 13px; }
+  .val-table .up   { color: var(--green);   font-weight: 700; }
+  .val-table .down { color: var(--magenta); font-weight: 700; }
+  .val-table .warn { color: var(--yellow);  font-weight: 700; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid #1e1e1e;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: #3a3a3a;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 28px 16px 72px; }
+    .stock-card { padding: 24px 20px 20px; }
+    .card-rank { font-size: 56px; }
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+    .val-table { font-size: 11px; }
+    .val-table th, .val-table td { padding: 6px 8px; }
+    .bofa-box { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="brand">L'Apprendista Investitore</div>
+
+<span class="tag">Analisi Fondamentale · Semiconductori AI</span>
+
+<h1>I <span class="accent-y">5 Titoli</span><br>AI Top di<br><span class="accent-c">Bank of America</span></h1>
+
+<p class="intro">Dalla GPU al wafer: un'analisi dei fondamentali e della traiettoria di crescita delle cinque società al centro del superciclo dell'intelligenza artificiale.</p>
+
+<p class="meta">Maggio 2026 &nbsp;·&nbsp; Raccomandazioni BofA – Analyst Vivek Arya &nbsp;·&nbsp; Fonte: report ufficiali societari e Bloomberg</p>
+
+<!-- ═══════════════════ CARD 1 – NVIDIA ═══════════════════ -->
+<div class="stock-card card-1">
+  <div class="card-rank">01</div>
+  <div class="card-header">
+    <span class="ticker-badge">NVDA</span>
+    <div class="card-title-block">
+      <h2>NVIDIA Corporation</h2>
+      <p class="card-subtitle">NASDAQ: NVDA &nbsp;·&nbsp; Settore: Semiconduttori / GPU AI</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-label">Fatturato FY2026</div>
+      <div class="kpi-value">$215,9B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Crescita YoY</div>
+      <div class="kpi-value">+65%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Gross Margin</div>
+      <div class="kpi-value">71,1%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P/E Trailing TTM</div>
+      <div class="kpi-value">~41x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Forward P/E (NTM)</div>
+      <div class="kpi-value">~24x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prezzo Attuale</div>
+      <div class="kpi-value">~$198</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Target BofA</div>
+      <div class="kpi-value">$275</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Upside Potenziale</div>
+      <div class="kpi-value">+39%</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Panoramica Aziendale</div>
+    <p>NVIDIA è oggi la società più importante nell'intero ecosistema dell'intelligenza artificiale. Le sue <span class="hl-y">GPU Blackwell</span> — la piattaforma di nuova generazione che include i sistemi GB200 e GB300 — hanno alimentato una crescita del data center senza precedenti: nel solo quarto trimestre del FY2026, i ricavi del segmento hanno raggiunto <span class="hl-y">$62,3 miliardi</span>, in crescita del 75% anno su anno. I ricavi totali annui di $215,9 miliardi rappresentano un'espansione del 65% rispetto all'anno precedente.</p>
+
+    <div class="section-label">Fondamentali e Redditività</div>
+    <p>La struttura economica di NVIDIA è eccezionale anche per gli standard del settore tech. Con un <span class="hl-y">gross margin del 71,1%</span> e un operating margin del 60,4%, l'azienda genera margini quasi da software su prodotti hardware. Il free cash flow ha raggiunto $96,7 miliardi su base annua. L'EPS GAAP per il FY2026 è stato di $4,90, in crescita del 67% su base annua. Il Forward P/E di soli ~24x è sorprendentemente contenuto considerata la traiettoria di crescita, e riflette la forte espansione attesa degli utili nel prossimo esercizio.</p>
+
+    <div class="section-label">Traiettoria di Crescita</div>
+    <p>NVIDIA beneficia di tre driver strutturali: il dominio nel mercato degli acceleratori AI con oltre il 92% di quota nelle GPU discrete per data center, la crescita esplosiva dell'infrastruttura di rete (i ricavi NVLink sono saliti del 263% YoY), e l'espansione nell'AI agenziale — la prossima frontiera dove modelli AI operano in autonomia su task complessi. BofA prevede che il mercato dei data center AI superi <span class="hl-y">$1,2 trilioni entro il 2030</span>. NVIDIA è posizionata per catturarne la quota più ampia grazie al proprio stack hardware-software (CUDA) profondamente radicato nell'ecosistema degli sviluppatori.</p>
+
+    <div class="section-label">Rischi da Monitorare</div>
+    <p>Le restrizioni all'export verso la Cina — che hanno già impattato per circa $8 miliardi di ricavi H20 — rappresentano il principale rischio geopolitico. La concorrenza dei chip custom (ASIC) sviluppati internamente dai hyperscaler è un fattore da seguire nel medio termine.</p>
+
+    <div class="bofa-box">
+      <span class="bofa-box-icon">BofA BUY</span>
+      <span class="bofa-box-text">Target Price <strong style="color:#f0f0f0">$275</strong> (+39% di upside) — "NVDA tratta a una valutazione convincente, pari a circa la metà del suo tasso di crescita, con una pipeline solida e numerosi potenziali catalizzatori." – Vivek Arya, BofA</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CARD 2 – MARVELL ═══════════════════ -->
+<div class="stock-card card-2">
+  <div class="card-rank">02</div>
+  <div class="card-header">
+    <span class="ticker-badge">MRVL</span>
+    <div class="card-title-block">
+      <h2>Marvell Technology</h2>
+      <p class="card-subtitle">NASDAQ: MRVL &nbsp;·&nbsp; Settore: Custom Silicon / Interconnect AI</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-label">Fatturato FY2026</div>
+      <div class="kpi-value">$8,2B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Crescita YoY</div>
+      <div class="kpi-value">+42%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Non-GAAP Gross M.</div>
+      <div class="kpi-value">~60%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P/E Trailing TTM</div>
+      <div class="kpi-value">~52x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Forward P/E (NTM)</div>
+      <div class="kpi-value">~41x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prezzo Attuale</div>
+      <div class="kpi-value">~$158</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Consensus Target</div>
+      <div class="kpi-value">~$122</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Target Rev. FY27</div>
+      <div class="kpi-value">$11B</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Panoramica Aziendale</div>
+    <p>Marvell Technology è la grande storia di trasformazione dei semiconduttori AI degli ultimi due anni. Da produttore di chip per networking e storage di fascia media, l'azienda si è riposizionata come <span class="hl-c">principale fornitore di XPU custom</span> (acceleratori AI su misura) per i grandi hyperscaler. Il suo business di custom silicon è cresciuto da quasi zero a <span class="hl-c">$1,5 miliardi di ricavi annuali</span> nel giro di un solo esercizio fiscale. Con ricavi totali di $8,195 miliardi nel FY2026 — in crescita del 42% — e un EPS non-GAAP in aumento dell'81%, Marvell ha già superato le aspettative più ottimistiche di inizio anno.</p>
+
+    <div class="section-label">Fondamentali e Redditività</div>
+    <p>Il segmento data center ha rappresentato circa il 74-76% dei ricavi totali, con una crescita del 38-69% a seconda del trimestre. Il gross margin non-GAAP si attesta intorno al <span class="hl-c">60%</span>, in espansione grazie al mix favorevole verso i prodotti custom ad alto valore. L'operating margin non-GAAP ha superato il 36%, con forte leva operativa strutturale. Il titolo (~$158) tratta attualmente sopra il consensus degli analisti (~$122), scontando già parte della crescita FY2027-28.</p>
+
+    <div class="section-label">Traiettoria di Crescita</div>
+    <p>Il management ha guidato ricavi attorno a <span class="hl-c">$11 miliardi nel FY2027</span> e $15 miliardi per il FY2028. La crescita sarà trainata da 18 design win con grandi cloud provider, la transizione al nodo a <span class="hl-c">2 nanometri</span> per i chip AI, e l'acquisizione da $3,25 miliardi di <span class="hl-c">Celestial AI</span> — tecnologia di "photonic fabric" per i data center di prossima generazione. La visibilità degli ordini è ai massimi storici.</p>
+
+    <div class="section-label">Rischi da Monitorare</div>
+    <p>La concentrazione su pochi hyperscaler come clienti chiave è un fattore di rischio di controparte. Il rallentamento della spesa capex da parte dei grandi cloud provider potrebbe impattare la domanda nel breve periodo. Il titolo tratta già sopra il target consensus degli analisti, il che limita il margine di sicurezza nell'ingresso.</p>
+
+    <div class="bofa-box">
+      <span class="bofa-box-icon">BofA BUY</span>
+      <span class="bofa-box-text">MRVL è identificata come la scommessa "pura" sull'AI custom silicon. <strong style="color:#FFD600">⚠ Nota:</strong> il titolo (~$158) tratta oggi sopra il consensus degli analisti (~$122), scontando già una parte significativa della crescita attesa per FY2027-28. Il mercato prezza ottimisticamente l'esecuzione su $11B di ricavi FY2027.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CARD 3 – APPLIED MATERIALS ═══════════════════ -->
+<div class="stock-card card-3">
+  <div class="card-rank">03</div>
+  <div class="card-header">
+    <span class="ticker-badge">AMAT</span>
+    <div class="card-title-block">
+      <h2>Applied Materials</h2>
+      <p class="card-subtitle">NASDAQ: AMAT &nbsp;·&nbsp; Settore: Attrezzature per la produzione di semiconduttori</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-label">Ricavi Q1 FY2026</div>
+      <div class="kpi-value">$7,01B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Guida Q2 FY26</div>
+      <div class="kpi-value">$7,65B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Gross Margin</div>
+      <div class="kpi-value">49,1%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P/E Trailing TTM</div>
+      <div class="kpi-value">~41x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Forward P/E (NTM)</div>
+      <div class="kpi-value">~33x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prezzo Attuale</div>
+      <div class="kpi-value">~$397</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Target BofA</div>
+      <div class="kpi-value">$420</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Upside Potenziale</div>
+      <div class="kpi-value">+6%</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Panoramica Aziendale</div>
+    <p>Applied Materials è il più grande produttore mondiale di macchinari per la fabbricazione di semiconduttori, misurato per fatturato. Fornisce i sistemi di deposizione, incisione e packaging avanzato che le fonderie come TSMC, Samsung e Intel utilizzano per produrre i chip più avanzati al mondo. È un'azienda <span class="hl-m">"picks and shovels"</span> per eccellenza: beneficia dell'intero ciclo di investimento nel settore dei chip, indipendentemente da quale architettura o azienda "vinca" la competizione finale.</p>
+
+    <div class="section-label">Fondamentali e Redditività</div>
+    <p>Nel Q1 FY2026 (chiuso a gennaio 2026), AMAT ha riportato ricavi di $7,01 miliardi — in lieve calo del 2% su base annua — ma con un EPS GAAP in salita del 75% a $2,54. Il gross margin non-GAAP è al <span class="hl-m">49,1%</span>, ai massimi degli ultimi 25 anni secondo il management. Il libro ordini rimane solido con un book-to-bill vicino a 1. Il Forward P/E di ~33x è tra i più bassi del gruppo, riflettendo una valutazione più difensiva rispetto ai pure-play AI.</p>
+
+    <div class="section-label">Traiettoria di Crescita</div>
+    <p>Il CEO Gary Dickerson ha indicato che l'azienda si aspetta di <span class="hl-m">far crescere il business delle attrezzature di oltre il 20%</span> nel 2026, trainato dall'AI. I driver specifici includono la domanda record di sistemi per <span class="hl-m">High-Bandwidth Memory (HBM)</span>, la crescita del foundry logic avanzato a 2nm e 3nm, e l'advanced packaging. Il segmento Applied Global Services (manutenzione e spare parts) ha raggiunto ricavi record, fornendo una base di fatturato ricorrente stabile.</p>
+
+    <div class="section-label">Rischi da Monitorare</div>
+    <p>Le restrizioni all'export verso la Cina hanno già ridotto l'esposizione al mercato cinese. Un rallentamento degli investimenti capex dei foundry — in particolare di TSMC — potrebbe ritardare nuovi ordini. La pressione competitiva da ASML e Lam Research in specifici segmenti è un fattore strutturale.</p>
+
+    <div class="bofa-box">
+      <span class="bofa-box-icon">BofA BUY</span>
+      <span class="bofa-box-text">Target Price <strong style="color:#f0f0f0">$420</strong> (+6% di upside) — basato su 29x gli utili 2027. Il Forward P/E più contenuto del gruppo (~33x) rende AMAT il titolo con la valutazione più difensiva della lista, adatto a un profilo di rischio moderato.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CARD 4 – LAM RESEARCH ═══════════════════ -->
+<div class="stock-card card-4">
+  <div class="card-rank">04</div>
+  <div class="card-header">
+    <span class="ticker-badge">LRCX</span>
+    <div class="card-title-block">
+      <h2>Lam Research</h2>
+      <p class="card-subtitle">NASDAQ: LRCX &nbsp;·&nbsp; Settore: Etch &amp; Deposition Equipment</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-label">Ricavi TTM</div>
+      <div class="kpi-value">$20,6B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Guida Q Giu 2026</div>
+      <div class="kpi-value">$5,7B+</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Gross Margin</div>
+      <div class="kpi-value">~50%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P/E Trailing TTM</div>
+      <div class="kpi-value">~55x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Forward P/E (NTM)</div>
+      <div class="kpi-value">~43x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prezzo Attuale</div>
+      <div class="kpi-value">~$257</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Target BofA</div>
+      <div class="kpi-value">$285</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Upside Potenziale</div>
+      <div class="kpi-value">+11%</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Panoramica Aziendale</div>
+    <p>Lam Research è il leader mondiale nei sistemi di <span class="hl-g">etch (incisione)</span> e <span class="hl-g">deposition (deposizione)</span> — i processi fondamentali attraverso cui i transistor vengono letteralmente "scolpiti" nel silicio. Se NVIDIA vende il "cervello" dell'AI, Lam produce i macchinari che costruiscono quel cervello. L'azienda ha registrato ricavi TTM di $20,6 miliardi, con un'accelerazione continuata nel FY2026 grazie alla domanda di attrezzature per memory AI.</p>
+
+    <div class="section-label">Fondamentali e Redditività</div>
+    <p>Il gross margin si attesta stabilmente intorno al <span class="hl-g">50%</span> — un livello notevole per un'azienda di hardware industriale, che riflette il forte potere di pricing derivante dalla quasi-monopolizzazione di specifici processi tecnologici critici. La guida per il trimestre di giugno 2026 supera i $5,7 miliardi, segnalando un'ulteriore accelerazione. Il P/E trailing (~55x) è il più alto del gruppo, ma il Forward P/E (~43x) riflette la forte crescita attesa degli utili.</p>
+
+    <div class="section-label">Traiettoria di Crescita</div>
+    <p>Lam beneficia di due megatrend simultanei. Il primo è la crescita della <span class="hl-g">memoria NAND ad alto layer count</span> — dove Lam detiene una posizione dominante. Il secondo è la domanda esplosiva di <span class="hl-g">HBM (High-Bandwidth Memory)</span> per i sistemi AI: ogni chip HBM richiede processi di etch e deposition avanzati dove Lam non ha concorrenti diretti di livello comparabile. BofA stima una crescita delle attrezzature per wafer fab vicino a due cifre nel 2026, con Lam posizionata come principale beneficiaria.</p>
+
+    <div class="section-label">Rischi da Monitorare</div>
+    <p>La concentrazione geografica verso la Cina è il rischio principale: la quota cinese è arrivata al <span class="hl-g">43% dei ricavi</span> in un trimestre del FY2026, scendendo poi al 35% — ma rimane una dipendenza strutturale significativa. Eventuali nuove restrizioni all'export potrebbero impattare materialmente i risultati futuri.</p>
+
+    <div class="bofa-box">
+      <span class="bofa-box-icon">BofA BUY</span>
+      <span class="bofa-box-text">Target Price <strong style="color:#f0f0f0">$285</strong> (+11% di upside) — a 41x gli utili 2027. BofA sottolinea come Lam sia il pick "puro" nel segmento delle attrezzature memory, con visibilità multi-trimestrale sui cicli di spesa NAND e HBM.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CARD 5 – AMD ═══════════════════ -->
+<div class="stock-card card-5">
+  <div class="card-rank">05</div>
+  <div class="card-header">
+    <span class="ticker-badge">AMD</span>
+    <div class="card-title-block">
+      <h2>Advanced Micro Devices</h2>
+      <p class="card-subtitle">NASDAQ: AMD &nbsp;·&nbsp; Settore: CPU, GPU AI, FPGA Data Center</p>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-label">Guida Q1 2026</div>
+      <div class="kpi-value">$9,8B</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Crescita YoY Q1</div>
+      <div class="kpi-value">+32%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Non-GAAP Gross M.</div>
+      <div class="kpi-value">~55%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P/E Trailing TTM</div>
+      <div class="kpi-value">~135x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Forward P/E (NTM)</div>
+      <div class="kpi-value">~52x</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prezzo Attuale</div>
+      <div class="kpi-value">~$360</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Target BofA</div>
+      <div class="kpi-value">$280</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Upside / Downside</div>
+      <div class="kpi-value">-22%</div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="section-label">Panoramica Aziendale</div>
+    <p>AMD è il principale sfidante di NVIDIA nel mercato degli acceleratori AI, con le proprie GPU Instinct MI300X e MI308, ed è allo stesso tempo il leader di facto nel mercato dei processori server x86 con la linea EPYC. La CEO Lisa Su ha definito il 2025 "un anno definitivo per AMD", con l'azienda che ha stabilito design win record per $17 miliardi nel settore embedded e ha lanciato una partnership strategica con <span class="hl-o">OpenAI</span> per fornitura di acceleratori AI personalizzati. Il titolo ha guadagnato oltre il <span class="hl-o">+70% da inizio 2026</span>, superando ampiamente il target BofA.</p>
+
+    <div class="section-label">Fondamentali e Redditività</div>
+    <p>Per il Q1 2026, AMD ha guidato ricavi di circa $9,8 miliardi — <span class="hl-o">+32% anno su anno</span> — con un gross margin non-GAAP atteso al 55%. Il P/E trailing di ~135x riflette utili GAAP ancora contenuti rispetto alla capitalizzazione, mentre il Forward P/E di ~52x sconta la forte crescita degli utili attesa. AMD punta a EPS superiore a $20 e un CAGR dei ricavi superiore al 35% su 3-5 anni.</p>
+
+    <div class="section-label">Traiettoria di Crescita</div>
+    <p>BofA vede AMD come il principale beneficiario del segmento <span class="hl-o">inference AI</span> — il processo con cui i modelli eseguono risposte in tempo reale — dove il rapporto prezzo/performance è cruciale. Le GPU MI300X/MI308 sono già in produzione di volume presso hyperscaler. La <span class="hl-o">linea EPYC Turin</span> (5a gen., nodo 3nm) sta consolidando la leadership nei processori server AI. La JV con OpenAI potrebbe aprire un canale di fornitura multi-miliardario.</p>
+
+    <div class="section-label">Rischi da Monitorare</div>
+    <p>Le restrizioni all'export delle GPU MI308 verso la Cina sono già un vento contrario misurabile. Il dominio dell'ecosistema CUDA di NVIDIA rimane una barriera strutturale. La ciclicità del segmento semi-custom (console gaming) peserà sulla crescita 2026. <strong style="color: #FF6B35">Il titolo tratta attualmente sopra il target BofA di $280</strong> — un aggiornamento del target è atteso.</p>
+
+    <div class="bofa-box">
+      <span class="bofa-box-icon">BofA BUY</span>
+      <span class="bofa-box-text">Target Price <strong style="color:#f0f0f0">$280</strong> — a 27x gli utili non-GAAP 2027. <strong style="color:#FF6B35">⚠ AMD ha già superato il target BofA</strong> dopo un rally del +70% YTD nel 2026. BofA mantiene il Buy sulla tesi di lungo periodo, ma il titolo tratta sopra il prezzo obiettivo — una revisione al rialzo del target è attesa a breve.</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ CONCLUSIONE ═══════════════════ -->
+<div class="conclusion">
+  <h3>Riepilogo Valutazioni · Maggio 2026</h3>
+
+  <table class="val-table">
+    <thead>
+      <tr>
+        <th>Ticker</th>
+        <th>Prezzo</th>
+        <th>P/E TTM</th>
+        <th>Fwd P/E</th>
+        <th>Target BofA</th>
+        <th>Upside / Down</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ticker-col" style="color:#FFD600">NVDA</td>
+        <td>~$198</td>
+        <td>~41x</td>
+        <td>~24x</td>
+        <td>$275</td>
+        <td class="up">+39%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col" style="color:#00E5FF">MRVL</td>
+        <td>~$158</td>
+        <td>~52x</td>
+        <td>~41x</td>
+        <td>— *</td>
+        <td class="warn">sopra consensus</td>
+      </tr>
+      <tr>
+        <td class="ticker-col" style="color:#FF2D78">AMAT</td>
+        <td>~$397</td>
+        <td>~41x</td>
+        <td>~33x</td>
+        <td>$420</td>
+        <td class="up">+6%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col" style="color:#00FF94">LRCX</td>
+        <td>~$257</td>
+        <td>~55x</td>
+        <td>~43x</td>
+        <td>$285</td>
+        <td class="up">+11%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col" style="color:#FF6B35">AMD</td>
+        <td>~$360</td>
+        <td>~135x</td>
+        <td>~52x</td>
+        <td>$280</td>
+        <td class="down">-22% ⚠</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-family:'Courier New',monospace;font-size:10px;color:#444;margin-bottom:24px;">* BofA non ha pubblicato un target individuale per MRVL in questa lista specifica. Il consensus degli analisti è ~$122. I prezzi sono indicativi e aggiornati a inizio maggio 2026.</p>
+
+  <p>Le cinque società analizzate coprono l'intera catena del valore dell'intelligenza artificiale: dai chip che eseguono i modelli (<span class="hl-y">NVIDIA</span>, <span class="hl-o">AMD</span>), ai custom silicon per hyperscaler (<span class="hl-c">Marvell</span>), fino alle attrezzature che rendono possibile la produzione di tutto ciò (<span class="hl-m">Applied Materials</span>, <span class="hl-g">Lam Research</span>). Questa diversificazione è la chiave del ragionamento di BofA: non scommettere su un singolo "vincitore" dell'AI, ma costruire un'esposizione strutturata all'intero ecosistema.</p>
+
+  <p>BofA stima che il 2026 rappresenti il <strong style="color: #f0f0f0">punto di metà percorso</strong> di un ciclo di investimento infrastrutturale decennale, con le vendite globali di semiconduttori proiettate a superare per la prima volta il traguardo storico di <strong style="color: #f0f0f0">$1 trilione</strong>. I soli chip AI dovrebbero raggiungere i $900 miliardi di fatturato cumulativo nei prossimi anni.</p>
+
+  <p>Per l'investitore retail italiano, questi titoli sono accessibili tramite i principali broker europei (Trade Republic, Scalable Capital, Fineco, DEGIRO) e rappresentano un'esposizione a un tema secolare potente — ma con volatilità elevata e una correlazione forte con il sentiment macro sul ciclo tech.</p>
+</div>
+
+<div class="disclaimer">
+  DISCLAIMER — Questo articolo ha finalita' esclusivamente informative ed educative. Non costituisce consulenza finanziaria, raccomandazione di investimento o sollecitazione all'acquisto o alla vendita di strumenti finanziari. I dati fondamentali riportati sono tratti da comunicati ufficiali societari, filing SEC e fonti di mercato pubblicamente disponibili aggiornate a maggio 2026. Investire in strumenti finanziari comporta rischi, inclusa la possibile perdita del capitale investito. Prima di effettuare qualsiasi investimento, consulta un consulente finanziario autorizzato. L'Apprendista Investitore non detiene posizioni nei titoli citati al momento della pubblicazione.
+</div>
+
+</body>
+</html>
